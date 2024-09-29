@@ -1,0 +1,1504 @@
+{
+	"info": {
+		"_postman_id": "4fb7d521-940e-4c7e-88e3-202ede6db387",
+		"name": "Stock Market Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11444708"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login - Broker",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('broker_token', pm.response.json().data.token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{broker_email}}\",\r\n    \"password\": \"{{broker_password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login - Broker",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"broker@app.com\",\r\n    \"password\": \"broker@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "538"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21a-zRLdN8O7cB8l8GKnU0QtOXLRy6s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Sep 2024 19:20:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmY4NTY5NWQzOGIwMjc0ODlmYjNlOWMiLCJuYW1lIjoiQnJva2VyIiwiZW1haWwiOiJicm9rZXJAYXBwLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGVGaUJRN2UzOHA5RHM4MllpTGFCU09lTHV4TG1tNXNiMzV4Li44SjB2QU5OZlVONC9JVVZpIiwicm9sZSI6IjY2Zjg1Njk0ZDM4YjAyNzQ4OWZiM2U5NSIsImNyZWF0ZWRBdCI6IjIwMjQtMDktMjhUMTk6MTg6NDUuMTM1WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDktMjhUMTk6MTg6NDUuMTM1WiIsIl9fdiI6MCwiaWF0IjoxNzI3NTUxMjMwLCJleHAiOjE3Mjc1NTQ4MzB9.hMvq4Eks5I5-3BLeLs312RIB6ajIGmszBsdHDaZWlK0\",\n        \"expiresIn\": 3600\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login - Investor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('investor_token', pm.response.json().data.token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{investor_email}}\",\r\n    \"password\": \"{{investor_password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login - Investor",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"investor@app.com\",\r\n    \"password\": \"investor@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "544"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"220-J0vYFtcLp6tFcAq4gaPwYp6CPcI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Sep 2024 19:20:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmY4NTY5NWQzOGIwMjc0ODlmYjNlOWYiLCJuYW1lIjoiSW52ZXN0b3IiLCJlbWFpbCI6ImludmVzdG9yQGFwcC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRMaTh2Y1JuZS9Ed3JQbEtUZWdKWFllOVB4Mm1FcEM1cGlJLm1kMG5ZMnhxR2tkQ2x5RTIwMiIsInJvbGUiOiI2NmY4NTY5NGQzOGIwMjc0ODlmYjNlOTQiLCJjcmVhdGVkQXQiOiIyMDI0LTA5LTI4VDE5OjE4OjQ1LjIwNloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA5LTI4VDE5OjE4OjQ1LjIwNloiLCJfX3YiOjAsImlhdCI6MTcyNzU1MTIzNiwiZXhwIjoxNzI3NTU0ODM2fQ.7tC51Njck-M0f9W85Wg5QB44-mi6kiCXVjOEnTuwVrM\",\n        \"expiresIn\": 3600\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Portfolio",
+			"item": [
+				{
+					"name": "Investor",
+					"item": [
+						{
+							"name": "Retrieve Portfolio",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set('portfolio_id', pm.response.json().data._id)"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{investor_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/portfolios",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"portfolios"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Retrieve Portfolio",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/portfolios",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"portfolios"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "362"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"16a-Mox4S2jsP+jjrOtM7/USG7GQ0Bw\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 29 Sep 2024 02:40:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"66f85695d38b027489fb3ea1\",\n        \"userId\": \"66f85695d38b027489fb3e9f\",\n        \"stocks\": [\n            {\n                \"stockId\": \"66f85722f43e7720af0d29a2\",\n                \"name\": \"ZOMATO\",\n                \"price\": 320,\n                \"quantity\": 5,\n                \"averagePrice\": 315,\n                \"totalInvested\": 1575,\n                \"currentValue\": 1600,\n                \"currentReturnsPercentage\": 2.5\n            }\n        ],\n        \"createdAt\": \"2024-09-28T19:18:45.210Z\",\n        \"updatedAt\": \"2024-09-28T19:23:06.246Z\",\n        \"__v\": 1\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Stocks",
+			"item": [
+				{
+					"name": "Investor",
+					"item": [
+						{
+							"name": "List Stocks",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{investor_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/stocks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"stocks"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List Stocks",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/stocks",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"stocks"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "484"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1e4-gL1fDfdoo022FotDI00JgOox5pc\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 28 Sep 2024 19:20:44 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"66f85695d38b027489fb3e97\",\n            \"name\": \"TATA MOTORS\",\n            \"price\": 900,\n            \"__v\": 0,\n            \"createdAt\": \"2024-09-28T19:18:45.049Z\",\n            \"updatedAt\": \"2024-09-28T19:18:45.049Z\"\n        },\n        {\n            \"_id\": \"66f85695d38b027489fb3e98\",\n            \"name\": \"RELIANCE\",\n            \"price\": 2500,\n            \"__v\": 0,\n            \"createdAt\": \"2024-09-28T19:18:45.049Z\",\n            \"updatedAt\": \"2024-09-28T19:18:45.049Z\"\n        },\n        {\n            \"_id\": \"66f85695d38b027489fb3e99\",\n            \"name\": \"HDFC BANK\",\n            \"price\": 1500,\n            \"__v\": 0,\n            \"createdAt\": \"2024-09-28T19:18:45.049Z\",\n            \"updatedAt\": \"2024-09-28T19:18:45.049Z\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Broker",
+					"item": [
+						{
+							"name": "List Stocks",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{broker_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/stocks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"stocks"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List Stocks",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/stocks",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"stocks"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "484"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1e4-gL1fDfdoo022FotDI00JgOox5pc\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 28 Sep 2024 19:20:50 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"66f85695d38b027489fb3e97\",\n            \"name\": \"TATA MOTORS\",\n            \"price\": 900,\n            \"__v\": 0,\n            \"createdAt\": \"2024-09-28T19:18:45.049Z\",\n            \"updatedAt\": \"2024-09-28T19:18:45.049Z\"\n        },\n        {\n            \"_id\": \"66f85695d38b027489fb3e98\",\n            \"name\": \"RELIANCE\",\n            \"price\": 2500,\n            \"__v\": 0,\n            \"createdAt\": \"2024-09-28T19:18:45.049Z\",\n            \"updatedAt\": \"2024-09-28T19:18:45.049Z\"\n        },\n        {\n            \"_id\": \"66f85695d38b027489fb3e99\",\n            \"name\": \"HDFC BANK\",\n            \"price\": 1500,\n            \"__v\": 0,\n            \"createdAt\": \"2024-09-28T19:18:45.049Z\",\n            \"updatedAt\": \"2024-09-28T19:18:45.049Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Add Stock",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set('stock_id', pm.response.json().data._id)"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{broker_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"ZOMATO\",\r\n    \"price\": 300\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/stocks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"stocks"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add Stock",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"ZOMATO\",\r\n    \"price\": 300\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/stocks",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"stocks"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "172"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ac-/SYe3gc1hu3jOGLVxT+pw0GJ52M\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 28 Sep 2024 19:21:06 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"name\": \"ZOMATO\",\n        \"price\": 300,\n        \"_id\": \"66f85722f43e7720af0d29a2\",\n        \"createdAt\": \"2024-09-28T19:21:06.195Z\",\n        \"updatedAt\": \"2024-09-28T19:21:06.195Z\",\n        \"__v\": 0\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Stock",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{broker_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"ZOMATO\",\r\n    \"price\": 320\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/stocks/{{stock_id}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"stocks",
+										"{{stock_id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Stock",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"ZOMATO\",\r\n    \"price\": 320\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/stocks/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"stocks",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "116"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"74-AM0C4rZ8n26iYVTSLQZZMzOnLVE\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 28 Sep 2024 19:21:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"acknowledged\": true,\n        \"modifiedCount\": 1,\n        \"upsertedId\": null,\n        \"upsertedCount\": 0,\n        \"matchedCount\": 1\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Trades",
+			"item": [
+				{
+					"name": "Investor",
+					"item": [
+						{
+							"name": "List Trades",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{investor_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/trades",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"trades"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List Trades",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/trades",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"trades"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "439"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1b7-4KxK3Dhyh+QZUH5h9CeYRxiPtmM\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 28 Sep 2024 19:22:40 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"66f85764f43e7720af0d29a7\",\n            \"userId\": \"66f85695d38b027489fb3e9f\",\n            \"portfolioId\": \"66f85695d38b027489fb3ea1\",\n            \"stockId\": {\n                \"_id\": \"66f85722f43e7720af0d29a2\",\n                \"name\": \"ZOMATO\",\n                \"price\": 320,\n                \"createdAt\": \"2024-09-28T19:21:06.195Z\",\n                \"updatedAt\": \"2024-09-28T19:21:14.702Z\",\n                \"__v\": 0\n            },\n            \"quantity\": 5,\n            \"price\": 310,\n            \"type\": \"BUY\",\n            \"status\": \"PENDING\",\n            \"createdAt\": \"2024-09-28T19:22:12.190Z\",\n            \"updatedAt\": \"2024-09-28T19:22:12.190Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Add Trade",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set('trade_id', pm.response.json().data._id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{investor_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"stockId\": \"{{stock_id}}\",\r\n    \"portfolioId\": \"{{portfolio_id}}\",\r\n    \"quantity\": 5,\r\n    \"price\": 310,\r\n    \"type\": \"BUY\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/trades",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"trades"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add Trade",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"stockId\": \"\",\r\n    \"portfolioId\": \"\",\r\n    \"quantity\": 5,\r\n    \"price\": 310,\r\n    \"type\": \"BUY\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/trades",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"trades"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "315"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"13b-TI1uT0YBN8TqUBaRIuUPQT9lerc\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 28 Sep 2024 19:22:12 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"userId\": \"66f85695d38b027489fb3e9f\",\n        \"portfolioId\": \"66f85695d38b027489fb3ea1\",\n        \"stockId\": \"66f85722f43e7720af0d29a2\",\n        \"quantity\": 5,\n        \"price\": 310,\n        \"type\": \"BUY\",\n        \"status\": \"PENDING\",\n        \"_id\": \"66f85764f43e7720af0d29a7\",\n        \"createdAt\": \"2024-09-28T19:22:12.190Z\",\n        \"updatedAt\": \"2024-09-28T19:22:12.190Z\",\n        \"__v\": 0\n    }\n}"
+								},
+								{
+									"name": "Add Trade",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"stockId\": \"{{stock_id}}\",\r\n    \"portfolioId\": \"{{portfolio_id}}\",\r\n    \"quantity\": 2,\r\n    \"price\": 320,\r\n    \"type\": \"SELL\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/trades",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"trades"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "316"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"13c-8hoquvOYEgWBSZcNIua4B3/88mw\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 28 Sep 2024 19:23:38 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"userId\": \"66f85695d38b027489fb3e9f\",\n        \"portfolioId\": \"66f85695d38b027489fb3ea1\",\n        \"stockId\": \"66f85722f43e7720af0d29a2\",\n        \"quantity\": 2,\n        \"price\": 320,\n        \"type\": \"SELL\",\n        \"status\": \"PENDING\",\n        \"_id\": \"66f857baf43e7720af0d29b9\",\n        \"createdAt\": \"2024-09-28T19:23:38.905Z\",\n        \"updatedAt\": \"2024-09-28T19:23:38.905Z\",\n        \"__v\": 0\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Modify Trade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{investor_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"quantity\": 5,\r\n    \"price\": 315\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/trades/{{trade_id}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"trades",
+										"{{trade_id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Modify Trade",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"quantity\": 5,\r\n    \"price\": 315\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/trades/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"trades",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "116"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"74-AM0C4rZ8n26iYVTSLQZZMzOnLVE\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 28 Sep 2024 19:22:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"acknowledged\": true,\n        \"modifiedCount\": 1,\n        \"upsertedId\": null,\n        \"upsertedCount\": 0,\n        \"matchedCount\": 1\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Trade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{investor_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/trades/{{trade_id}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"trades",
+										"{{trade_id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Trade",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/trades/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"trades",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-VP1YWZ/ipCaZB5XqVXihtRkixsE\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 28 Sep 2024 19:23:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"acknowledged\": true,\n        \"deletedCount\": 1\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Broker",
+					"item": [
+						{
+							"name": "List Trades",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{broker_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/trades",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"trades"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List Trades",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/trades",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"trades"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "439"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1b7-4KxK3Dhyh+QZUH5h9CeYRxiPtmM\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 28 Sep 2024 19:22:20 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"66f85764f43e7720af0d29a7\",\n            \"userId\": \"66f85695d38b027489fb3e9f\",\n            \"portfolioId\": \"66f85695d38b027489fb3ea1\",\n            \"stockId\": {\n                \"_id\": \"66f85722f43e7720af0d29a2\",\n                \"name\": \"ZOMATO\",\n                \"price\": 320,\n                \"createdAt\": \"2024-09-28T19:21:06.195Z\",\n                \"updatedAt\": \"2024-09-28T19:21:14.702Z\",\n                \"__v\": 0\n            },\n            \"quantity\": 5,\n            \"price\": 310,\n            \"type\": \"BUY\",\n            \"status\": \"PENDING\",\n            \"createdAt\": \"2024-09-28T19:22:12.190Z\",\n            \"updatedAt\": \"2024-09-28T19:22:12.190Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Execute Trade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{broker_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/trades/execute/{{trade_id}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"trades",
+										"execute",
+										"{{trade_id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Execute Trade",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/trades/execute/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"trades",
+												"execute",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "116"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"74-AM0C4rZ8n26iYVTSLQZZMzOnLVE\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 28 Sep 2024 19:23:06 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"acknowledged\": true,\n        \"modifiedCount\": 1,\n        \"upsertedId\": null,\n        \"upsertedCount\": 0,\n        \"matchedCount\": 1\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "404",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{investor_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/route",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"route"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/route",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"route"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"55-cQzBQzatd3FO4Y8dzViuRP3i7ps\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 Sep 2024 19:24:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"data\": {\n        \"info\": \"Route not found!\",\n        \"code\": 404,\n        \"message\": \"Not Found\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "401",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/route",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"route"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/route",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"route"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"56-89HNAerIi1QqsVBmkahLWAs/Nys\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 Sep 2024 19:25:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"data\": {\n        \"info\": \"Missing token!\",\n        \"code\": 401,\n        \"message\": \"Unauthorized\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
