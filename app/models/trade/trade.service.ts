@@ -38,7 +38,7 @@ const updateTrade = async (tradeId: string, trade: ITrade) => {
 };
 
 const deleteTrade = async (tradeId: string) => {
-  const results = await tradeRepo.deleteOne({ _id: tradeId });
+  const results = await tradeRepo.deleteOne({ _id: tradeId, status: { $ne: TradeStatus.EXECUTED } });
   if (!results.deletedCount) {
     throw new BadRequestError("Trade doesn't exists!");
   }
@@ -49,6 +49,9 @@ const executeTrade = async (tradeId: string, userId: string) => {
   const [trade] = await tradeRepo.search({ _id: tradeId });
   if (!trade) {
     throw new BadRequestError("Trade doesn't exists!");
+  }
+  if (trade.status !== TradeStatus.PENDING) {
+    throw new BadRequestError('Trade has already processed!');
   }
   const [portfolio] = await portfolioRepo.search({ userId: trade.userId });
   const stockIndex = portfolio.stocks.findIndex((stock: any) => {
